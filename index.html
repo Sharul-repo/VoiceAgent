@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voiceflow Assistant</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #1e1e1e;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #f1f1f1;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      background: #2b2b2b;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      color: #cccccc;
+    }
+
+    .chat-button {
+      background: #3a3a3a;
+      padding: 15px 25px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      color: #fff;
+      transition: 0.2s;
+    }
+
+    .chat-button:hover {
+      background: #505050;
+    }
+
+    /* Position Voiceflow widget button */
+    #vf-chat-button {
+      position: fixed !important;
+      bottom: 20px !important;
+      right: 20px !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hi, it's me Sharul</h1>
+    <p>Curious about my background or interests? Just ask.</p>
+    <button class="chat-button" onclick="window.voiceflow.chat.open()">Let's Talk</button>
+  </div>
+
+  <script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '69275d370c18e6bbd3a6ee3d' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          }
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+</body>
+</html>
